@@ -1,0 +1,64 @@
+%YAML 1.1
+# ^-- ATTN: [2019-12-31] If you use a later version, Github will fail
+#     with a bogus error message "You have an error in your yaml syntax".
+# -*- coding: UTF-8, tab-width: 2 -*-
+---
+
+name: '🌱 Build a branch'
+
+on:
+  push:
+    branches:
+      - 'bab/*'
+  workflow_dispatch:
+
+
+jobs:
+  job_build_a_branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout job'
+        uses: actions/checkout@v4
+        with:
+          path: 'job/'
+
+      - name: 'Checkout builder'
+        uses: actions/checkout@v4
+        with:
+          ref: 'experimental'
+          path: 'builder/'
+
+      - uses: mk-pmb/github-ci-util-2405-pmb/act/install@experimental
+      - name: 'Prepare'
+        run: >
+          mv -t .. builder/b && mv -t .. [a-z]*
+          && cd ../job && ghciu ../builder/prep.sh
+        env:
+          GH_OUT: |
+            build_from=
+            build_ref=master
+        id: prep
+
+      - name: 'Checkout adminer'
+        uses: actions/checkout@v4
+        with:
+          repository: '${{ steps.prep.outputs.build_from }}'
+          ref: '${{ steps.prep.outputs.build_ref }}'
+
+      - run: 'ls -al'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+...

@@ -24,7 +24,21 @@ I'd rather have automatic build-and-release in the GitHub CI.
 Usage
 -----
 
-:TODO:
+* Clone this repo.
+* Create a branch with a `README.md`
+  that has a chapter "Branch config" like below.
+* Push that branch.
+* Go to the "Actions" tab of your repo.
+* Select the Actions workflow "Build a branch".
+* On the right, click "Run workflow".
+* Select the branch you want to build.
+* Confirm.
+
+
+
+### Branch config
+
+* Build from: https://github.com/vrana/adminer/tree/master
 
 
 

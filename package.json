@@ -1,0 +1,21 @@
+{ "name": "db-adminer-php-build-on-github-ci",
+  "version": "0.0.0",
+  "description": "Advanced GitHub CI workflows for vrana's Adminer, the nice database management and editing tool.",
+  "keywords": [],
+
+  "author": "M.K. (https://github.com/mk-pmb)",
+  "homepage": "https://github.com/mk-pmb/db-adminer-php-build-on-github-ci/#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk-pmb/db-adminer-php-build-on-github-ci.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mk-pmb/db-adminer-php-build-on-github-ci/issues"
+  },
+  "contributors": [],
+
+  "private": true, "license": "GPL-2.0-only",
+
+
+  "engines": { "bash": ">=5.0.0" }
+}
